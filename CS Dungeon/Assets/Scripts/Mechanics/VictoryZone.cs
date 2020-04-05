@@ -15,6 +15,7 @@ namespace Platformer.Mechanics
             if (p != null)
             {
                 var ev = Schedule<PlayerEnteredVictoryZone>();
+                p.SendMessage("Finished");
                 ev.victoryZone = this;
             }
         }

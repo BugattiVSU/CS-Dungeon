@@ -17,6 +17,7 @@ namespace Platformer.Mechanics
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
+        
 
         /// <summary>
         /// Max horizontal speed of the player.
@@ -29,8 +30,11 @@ namespace Platformer.Mechanics
 
         public JumpState jumpState = JumpState.Grounded;
         private bool stopJump;
-        /*internal new*/ public Collider2D collider2d;
-        /*internal new*/ public AudioSource audioSource;
+        /*internal new*/
+        public Collider2D collider2d;
+        /*internal new*/
+        public AudioSource audioSource;
+        public AudioSource boom;
         public Health health;
         public bool controlEnabled = true;
 
@@ -42,10 +46,24 @@ namespace Platformer.Mechanics
 
         public Bounds Bounds => collider2d.bounds;
 
+        //Bullet
+        public GameObject BulletToRight, BulletToLeft, BulletToUp, BulletToBot;
+        public GameObject BoomToRight, BoomToLeft, BoomToUp, BoomToBot;
+        //public GameObject boomEffect;
+        Vector2 bulletPos;
+        Vector2 boomPos;
+        public float fireRate = 0.7f;
+        public float nextFire = 0.0f;
+        public Transform firePoint;
+        //public int power;
+        //public int maxPower;
+        //public int score;
+
         void Awake()
         {
             health = GetComponent<Health>();
             audioSource = GetComponent<AudioSource>();
+            boom = GetComponent<AudioSource>();
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
@@ -53,6 +71,7 @@ namespace Platformer.Mechanics
 
         protected override void Update()
         {
+
             if (controlEnabled)
             {
                 move.x = Input.GetAxis("Horizontal");
@@ -70,6 +89,23 @@ namespace Platformer.Mechanics
             }
             UpdateJumpState();
             base.Update();
+
+            if (Input.GetKey(KeyCode.Z) && Time.time > nextFire)
+            {
+                nextFire = Time.time + fireRate;
+                Fire();
+                
+                audioSource.Play();
+            }
+
+            if (Input.GetKey(KeyCode.X) && Time.time > nextFire)
+            {
+                nextFire = Time.time + fireRate;
+                FireBoom();
+                boom.Play();
+
+
+            }
         }
 
         void UpdateJumpState()
@@ -100,8 +136,9 @@ namespace Platformer.Mechanics
                     jumpState = JumpState.Grounded;
                     break;
             }
-        }
-
+            
+    }
+       
         protected override void ComputeVelocity()
         {
             if (jump && IsGrounded)
@@ -122,12 +159,112 @@ namespace Platformer.Mechanics
                 spriteRenderer.flipX = false;
             else if (move.x < -0.01f)
                 spriteRenderer.flipX = true;
-
+  
             animator.SetBool("grounded", IsGrounded);
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
-
             targetVelocity = move * maxSpeed;
         }
+
+        void Fire()
+        {
+            bulletPos = transform.position;
+            float ver = Input.GetAxis("Vertical");
+            float hor = Input.GetAxis("Horizontal");
+
+            if (hor == 0 && ver == 0)
+            {
+                if (spriteRenderer.flipX == false)
+                {
+                    bulletPos += new Vector2(+1f, 0.00f);
+
+                    Instantiate(BulletToRight, bulletPos, Quaternion.identity);
+                }
+                if (spriteRenderer.flipX == true)
+                {
+                    bulletPos += new Vector2(-1f, 0.00f);
+                    Instantiate(BulletToLeft, bulletPos, Quaternion.identity);
+                }
+            }
+
+            if (hor > 0)
+            {
+                bulletPos += new Vector2(+1f, 0.00f);
+                Instantiate(BulletToRight, bulletPos, Quaternion.identity);
+            }      
+            
+            if (hor < 0)
+            {
+                bulletPos += new Vector2(-1f, 0.00f);               
+                Instantiate(BulletToLeft, bulletPos, Quaternion.identity);
+                
+            }
+
+            
+            if (ver < 0)
+            {
+                bulletPos += new Vector2(0.00f, -1f);
+                Instantiate(BulletToBot, bulletPos, Quaternion.identity);
+            }
+            
+            if (ver > 0)
+            {
+                bulletPos += new Vector2(0.00f, 1f);
+
+                Instantiate(BulletToUp, bulletPos, Quaternion.identity);
+
+            }
+        }
+
+        void FireBoom()
+        {
+            boomPos = transform.position;
+            float ver = Input.GetAxis("Vertical");
+            float hor = Input.GetAxis("Horizontal");
+
+            if (hor == 0 && ver == 0)
+            {
+                if (spriteRenderer.flipX == false)
+                {
+                    boomPos += new Vector2(+1f, 0.00f);
+
+                    Instantiate(BoomToRight, boomPos, Quaternion.identity);
+                }
+                if (spriteRenderer.flipX == true)
+                {
+                    boomPos += new Vector2(-1f, 0.00f);
+                    Instantiate(BoomToLeft, boomPos, Quaternion.identity);
+                }
+            }
+
+            if (hor > 0)
+            {
+                boomPos += new Vector2(+1f, 0.00f);
+                Instantiate(BoomToRight, boomPos, Quaternion.identity);
+            }
+
+            if (hor < 0)
+            {
+                boomPos += new Vector2(-1f, 0.00f);
+                Instantiate(BoomToLeft, boomPos, Quaternion.identity);
+
+            }
+
+
+            if (ver < 0)
+            {
+                boomPos += new Vector2(0.00f, -1f);
+                Instantiate(BoomToBot, boomPos, Quaternion.identity);
+            }
+
+            if (ver > 0)
+            {
+                boomPos += new Vector2(0.00f, 1f);
+
+                Instantiate(BoomToUp, boomPos, Quaternion.identity);
+
+            }
+        }
+
 
         public enum JumpState
         {

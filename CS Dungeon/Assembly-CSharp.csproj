@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Gameplay\PlayerStopJump.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerTokenCollision.cs" />
     <Compile Include="Assets\Scripts\Mechanics\AnimationController.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\changeLevel.cs" />
     <Compile Include="Assets\Scripts\Mechanics\DeathZone.cs" />
     <Compile Include="Assets\Scripts\Mechanics\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\GameController.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Assets\Scripts\Mechanics\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Mechanics\TokenController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\TokenInstance.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\vertical_platform.cs" />
     <Compile Include="Assets\Scripts\Mechanics\VictoryZone.cs" />
     <Compile Include="Assets\Scripts\Model\PlatformerModel.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />

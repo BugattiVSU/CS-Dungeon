@@ -12,6 +12,13 @@ These instructions will get you a copy of the project up and running on your loc
 Unity 2019.2.19f1 version
 ```
 
+## Installing
+
+```
+[Unity](https://unity3d.com/get-unity/download?thank-you=update&download_nid=63334&os=Win)
+Also you can download 2019.2.19f1 version on Unityhub when you add the project on the Unityhub
+```
+
 ## Built With
 
 * [Unity](https://unity.com/) - The game engine

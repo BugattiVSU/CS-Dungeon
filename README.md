@@ -20,9 +20,9 @@ Unity 2019.2.19f1 version
 
 ```
 Also you can download 2019.2.19f1 version on Unityhub when you add the project on the Unityhub
-![image](https://ibb.co/xjf0WpV)
+![picture](https://github.com/BugattiVSU/CS-Dungeon/blob/master/image/first.png)
 And
-![image](https://ibb.co/6PzVLmN)
+![picture](https://github.com/BugattiVSU/CS-Dungeon/blob/master/image/second.png)
 ```
 
 ## Built With

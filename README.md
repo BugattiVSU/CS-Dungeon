@@ -28,7 +28,7 @@ Also you can download 2019.2.19f1 version on Unityhub when you add the project o
 
 ## Authors
 
-* **Andrew Tucker** - *Produck Ownerk* - [Website](https://cutmayne.github.io/)
+* **Andrew Tucker** - *Produck Owner* - [Website](https://cutmayne.github.io/)
 * **Jeremy Craven** - *Scrum Master* - [Website](https://jeremycraven-sudo.github.io/)
 * **Kevin Patel** - *Member* - [Website](https://kevinpatel0801.github.io/AboutMe/)
 * **William Lee** - *Member* - [Website](https://wlee412.github.io/)

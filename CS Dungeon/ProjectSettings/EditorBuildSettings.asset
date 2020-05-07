@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/dungeon2scene.unity
     guid: 8c4f1e5725734dd4988759b2f28569ca
+  - enabled: 1
+    path: Assets/Scenes/LB level.unity
+    guid: 54909b6138a9da24fb3841f1beabaf1f
+  - enabled: 1
+    path: Assets/Scenes/level3.unity
+    guid: e6a98ce9c0de0a74baaecdef68f265af
+  - enabled: 1
+    path: Assets/Scenes/level4.unity
+    guid: 9959d505603618340a5fa22e6550a5aa
   m_configObjects: {}

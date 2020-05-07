@@ -62,7 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\Doxygen\DoxygenWindow.cs" />
     <Compile Include="Assets\Editor\PatrolPathEditor.cs" />
+    <None Include="Assets\Editor\Doxygen\Resources\BaseDoxyfile.txt" />
+    <None Include="Assets\Editor\Doxygen\ReadMe.txt" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/andre/Documents/GitHub/CS-Dungeon/CS Dungeon/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>

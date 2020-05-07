@@ -1,0 +1,63 @@
+**********************
+CS DUNGEON alpha build
+**********************
+To Start the game, double-click the "New Unity Project" .exe file in the CS Dungeon folder.
+
+***********
+WARNING:
+***********
+Take care to use windowed mode, as the game currently has no method of exit in the user interface.
+
+**********************
+KEYBOARD CONTROLS
+**********************
+
+UP	[w]
+DOWN	[s]
+LEFT	[a]
+RIGHT	[d]
+
+JUMP	[space bar]
+
+*********************
+DEVELOPMENT TEAM
+*********************
+
+Andrew Tucker
+Kevin Patel
+William Lee
+Hoyong Lee
+Jeremy Craven
+Dongwoon Jeong
+
+*******
+TOOLS
+*******
+
+Unity
+FLStudio
+Github
+
+*********
+LICENSE
+*********
+This product may be distrubuted for fun and educational purposes for free under Unity's Terms of Service.
+
+Music created by Andrew Tucker. 
+
+All rights reserved. 
+
+*****************
+SPECIAL THANKS
+*****************
+
+Dr. Lin Chen
+Valdosta State University Department of Computer Science
+
+*******
+LINKS
+*******
+https://github.com/BugattiVSU/CS-Dungeon
+https://bugattivsu.github.io/
+https://unity.com/
+https://www.valdosta.edu/
